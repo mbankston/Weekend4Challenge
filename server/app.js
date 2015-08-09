@@ -7,7 +7,7 @@ var app = express();
 var post = require('./routes/post');
 var index = require('./routes/index');
 
-var mongoURI = "mongodb://localhost:27017/messageboard";
+var mongoURI = "mongodb://admin:password@ds031903.mongolab.com:31903/messageboard";
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function(err){
