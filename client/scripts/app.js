@@ -14,6 +14,12 @@ $(document).ready(function (){
         });
     });
 
+    $("#refresh").on('click', 'button', function(){
+
+        location.reload(true);
+
+    });
+
     //with .data its 'kittyfoofoo
     //with the attribute its data-kittyfoofoo
     $('#results').on('click', 'button', function(){
@@ -58,11 +64,10 @@ function getData(){
 function updateContainer(data){
     $('#results').empty();
     for (var i=0; i<data.length;i++){
-        var d = data[i].date
-        var n = d.toLocaleString('en-us');
+        var userTime = new Date(data[i].created).toLocaleString();
         $('#results').append("<div></div>")
         var $el = $('#results').children().last();
-        $el.append("<p>" + data[i].username +"<br>" +data[i].message + "<br>"+"Time posted: " +n+"</p>");
+        $el.append("<p>" + data[i].username +"<br>" +data[i].message + "<br>"+"Time posted: " +userTime+"</p>");
 
 
     }
