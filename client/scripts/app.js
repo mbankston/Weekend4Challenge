@@ -64,7 +64,7 @@ function getData(){
 function updateContainer(data){
     $('#results').empty();
     for (var i=0; i<data.length;i++){
-        var userTime = new Date(data[i].created).toLocaleString();
+        var userTime = new Date(data[i].date).toLocaleString();
         $('#results').append("<div></div>")
         var $el = $('#results').children().last();
         $el.append("<p>" + data[i].username +"<br>" +data[i].message + "<br>"+"Time posted: " +userTime+"</p>");
