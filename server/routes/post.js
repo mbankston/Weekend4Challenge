@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var Structure = require('../models/structure')
+var Structure = require('../models/structure.js')
 
 router.post("/", function(req, res, next){
     console.log("Post Hit: ", req.body);
